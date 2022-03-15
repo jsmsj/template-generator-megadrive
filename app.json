@@ -9,7 +9,7 @@
             "required": true
         },
         "PREFIX" : {
-            "description": "Prefix of your discord bot Make sure to add a space after the prefix Eg: 'md '",
+            "description": "Prefix of your discord bot Make sure to add a space after the prefix Eg: 'md '  Don't add the quotation marks !!!",
             "value": "md ",
             "required": true
         }

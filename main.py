@@ -71,7 +71,7 @@ async def template(ctx,drive_link=None,imdb_link=None,actual_size=None):
                 link_string = f"> Link: <{drive_link}>"
                 imdb_link_string = f"https://www.imdb.com/title/tt{imdb_id}"
 
-                ultimate = genre_string + "\n" + ":drive:" + name_string + "\n\n" + size_string + "\n" + link_string + "\n\n" + imdb_link_string
+                ultimate = genre_string + "\n" + ":drive: " + name_string + "\n\n" + size_string + "\n" + link_string + "\n\n" + imdb_link_string
 
                 await ctx.send(f"Preview:\n\n{ultimate}")
                 await ctx.send(f"Copy paste this:\n```\n{ultimate}\n```")
@@ -92,7 +92,7 @@ async def template(ctx,drive_link=None,imdb_link=None,actual_size=None):
                 link_string = f"> Link: <{drive_link}>"
                 imdb_link_string = imdb_link
 
-                ultimate = genre_string + "\n" + ":drive:" + name_string + "\n\n" + size_string + "\n" + link_string + "\n\n" + imdb_link_string
+                ultimate = genre_string + "\n" + ":drive: " + name_string + "\n\n" + size_string + "\n" + link_string + "\n\n" + imdb_link_string
 
                 await ctx.send(f"Preview:\n\n{ultimate}")
                 await ctx.send(f"Copy paste this:\n```\n{ultimate}\n```")
