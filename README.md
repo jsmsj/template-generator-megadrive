@@ -13,6 +13,14 @@
 6. Click the ✏️ icon and toggle the worker switch to `on`.
 7. Your bot will be online.
 
+## How to deploy video
+
+[Youtube](https://www.youtube.com/watch?v=58Bju0FhMVM)
+
+## Demo video
+
+[Youtube](https://www.youtube.com/watch?v=xWLtVbciaNk)
+
 ## Invite the bot and test it out. Note: it may not work after the bot has joined 100 servers, cause im too lazy to verify it.
 
 Invite : [Discord Bot](https://discord.com/api/oauth2/authorize?client_id=918110908734119958&permissions=274878188544&scope=bot)
