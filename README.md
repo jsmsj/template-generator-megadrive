@@ -13,8 +13,9 @@
 6. Click the ✏️ icon and toggle the worker switch to `on`.
 7. Your bot will be online.
 
-## Website for template generator
-Under Construction ...
+## Invite the bot and test it out. Note: it may not work after the bot has joined 100 servers, cause im too lazy to verify it.
+
+Invite : [Discord Bot](https://discord.com/api/oauth2/authorize?client_id=918110908734119958&permissions=274878188544&scope=bot)
 
 ## How to use the bot:
 > Note: My bot prefix is "md "
