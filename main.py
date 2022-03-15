@@ -67,7 +67,8 @@ async def template(ctx,drive_link=None,imdb_link=None,actual_size=None):
                 if actual_size:
                     size_string = f"> Size: **{str(actual_size)}**"
                 else:
-                    size_string = f"> Size: **{await give_size(drive_link)}**"
+                    size = await give_size(drive_link)
+                    size_string = f"> Size: **{size}**"
                 link_string = f"> Link: <{drive_link}>"
                 imdb_link_string = f"https://www.imdb.com/title/tt{imdb_id}"
 
@@ -88,7 +89,8 @@ async def template(ctx,drive_link=None,imdb_link=None,actual_size=None):
                 if actual_size:
                     size_string = f"> Size: **{str(actual_size)}**"
                 else:
-                    size_string = f"> Size: **{await give_size(drive_link)}**"
+                    size = await give_size(drive_link)
+                    size_string = f"> Size: **{size}**"
                 link_string = f"> Link: <{drive_link}>"
                 imdb_link_string = imdb_link
 
