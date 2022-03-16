@@ -5,6 +5,7 @@ from imdb import Cinemagoer
 from googlesearch import search
 import PTN
 import requests
+import re
 from requests.structures import CaseInsensitiveDict
 
 ia = Cinemagoer()
@@ -128,7 +129,7 @@ async def give_size(drive_url):
         return resp.json()['size']
     except:
         try:
-            return file_size(getIdFromUrl(drive_url))
+            return await file_size(getIdFromUrl(drive_url))
         except:
             return "Unable to get size"
 
@@ -140,4 +141,8 @@ def brute_imdb_link(name):
         return i
 
 def id_from_imdblink(url):
-    return url[29:36]
+    pattern = re.compile(r"https?://(www\.)?imdb\.com/title/tt(\d+)/")
+    matches = pattern.finditer(url)
+    for match in matches:
+        return match.group(2)
+
