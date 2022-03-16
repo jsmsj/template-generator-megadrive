@@ -46,19 +46,29 @@ async def template(ctx,drive_link=None,imdb_link=None,actual_size=None):
                     i+=1
                 temp = '\n'.join(new_movie_ls)
                 movie_list_msg = await ctx.send(f"```\n{temp}\n```")
-                await ctx.send("Choose the index number of the name of the series/movie\nEg: reply 2 for the second value")
+                await ctx.send("Choose the index number of the name of the series/movie\nEg: reply 2 for the second value\nIf your movie/show is not in the list reply none")
                 def check(m):
                     return m.author == ctx.author
                 msg = await bot.wait_for('message', check=check)
                 try:
                     index = int(msg.content) - 1
                 except:
-                    return await ctx.send("You have to enter an integer for the index number !!")
+                    if msg.content.lower() == "none":
+                        mov_id = id_from_imdblink(brute_imdb_link(search_name)).replace(" ","")
+                        if mov_id == "":
+                            return await ctx.send(f"Please provide imdb link as well. Run `{secrets.prefix}info template` for syntax.")
+                        else:
+                            imdb_id = mov_id
+                    else:
+                        return await ctx.send("You have to enter an integer for the index number !!")
                 try:
-                    final_movie = list_of_movies[index]
+                    try:
+                        final_movie = list_of_movies[index]
+                    except:
+                        if not msg.content.lower() == "none": return await movie_list_msg.reply("You have entered the index number which is not in this list")
+                    imdb_id = movie_id(final_movie)
                 except:
-                    return await movie_list_msg.reply("You have entered the index number which is not in this list")
-                imdb_id = movie_id(final_movie)
+                    pass
             async with ctx.typing():
                 list_of_genres = get_genre_list(movie_obj(imdb_id))
                 if len(list_of_genres) ==0: list_of_genres = ['No Genre Found']
