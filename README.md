@@ -13,6 +13,10 @@
 6. Click the ✏️ icon and toggle the worker switch to `on`.
 7. Your bot will be online.
 
+## Detailed Guide:
+
+[rentry.co](https://rentry.co/t9zes)
+
 ## How to deploy video
 
 [Youtube](https://www.youtube.com/watch?v=58Bju0FhMVM)
