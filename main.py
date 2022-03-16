@@ -33,7 +33,11 @@ async def template(ctx,drive_link=None,imdb_link=None,actual_size=None):
                 return await ctx.send(f"Please provide imdb link as well. Run `{secrets.prefix}info template` for syntax.")
             if len(list_of_movies) == 0 :
                 try:
-                    mov_id = id_from_imdblink(brute_imdb_link(search_name)).replace(" ","")
+                    linkk = brute_imdb_link(search_name)
+                    if linkk:
+                        mov_id = id_from_imdblink(brute_imdb_link(search_name)).replace(" ","")
+                    else:
+                        return await ctx.send(f"Please provide imdb link as well. Run `{secrets.prefix}info template` for syntax.")
                     if mov_id == "": return await ctx.send(f"Please provide imdb link as well. Run `{secrets.prefix}info template` for syntax.")
                 except:
                     return await ctx.send(f"Please provide imdb link as well. Run `{secrets.prefix}info template` for syntax.")
@@ -54,7 +58,11 @@ async def template(ctx,drive_link=None,imdb_link=None,actual_size=None):
                     index = int(msg.content) - 1
                 except:
                     if msg.content.lower() == "none":
-                        mov_id = id_from_imdblink(brute_imdb_link(search_name)).replace(" ","")
+                        linkk = brute_imdb_link(search_name)
+                        if linkk:
+                            mov_id = id_from_imdblink(brute_imdb_link(search_name)).replace(" ","")
+                        else:
+                            return await ctx.send(f"Please provide imdb link as well. Run `{secrets.prefix}info template` for syntax.")
                         if mov_id == "":
                             return await ctx.send(f"Please provide imdb link as well. Run `{secrets.prefix}info template` for syntax.")
                         else:
